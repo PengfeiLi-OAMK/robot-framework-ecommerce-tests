@@ -17,3 +17,11 @@ Login With Valid Credentials
     Login.Click "Submit" button
 Verify Login Successful
     Products.Verify page loaded
+Login With Invalid Credentials
+    [Arguments]    ${username}       ${password}
+    Login.Fill "Username" field      ${username}
+    Login.Fill "Password" field      ${password}
+    Login.Click "Submit" button
+Verify Login Unsuccessful
+    [Arguments]                      ${expected_error_msg}
+    LogIn.Verify Error Message       ${expected_error_msg}
