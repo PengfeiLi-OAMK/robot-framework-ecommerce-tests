@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation    Invalid Login related test cases
-Test Tags    login    regression
-Resource     ../Resources/Common.resource
-Resource     ../Resources/SwagLabsApp.resource
-Test Setup    Begin Web Test 
+Test Tags        login    regression
+Resource         ../Resources/Common.resource
+Resource         ../Resources/SwagLabsApp.resource
+Test Setup       Begin Web Test 
 Test Teardown    End Web Test
 Test Template    Should fail to login with invalid credentials
 # run script: robot -d results tests/Login_Invalid.robot
