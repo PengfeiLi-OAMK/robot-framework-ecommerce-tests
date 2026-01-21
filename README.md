@@ -2,6 +2,7 @@
 ![Build Status](https://github.com/PengfeiLi-OAMK/robot-framework-ecommerce-tests/actions/workflows/main.yml/badge.svg)
 ![Robot Framework](https://img.shields.io/badge/Robot%20Framework-7.0+-00C0B5?style=flat&logo=robot-framework&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat&logo=python&logoColor=white)
+
 This repository contains an End-to-End (E2E) automated testing suite for the [Swag Labs (SauceDemo)](https://www.saucedemo.com/) e-commerce website, built using **Robot Framework** and **SeleniumLibrary**.
 
 The project implements the **Page Object Model (POM)** design pattern to ensure scalability and maintainability, and it is fully integrated with GitHub Actions for CI/CD.
@@ -57,7 +58,7 @@ pip install -r requirements.txt
 ```
 *Note: SeleniumLibrary 4.10+ includes Selenium Manager, so you do not need to manually download ChromeDriver/EdgeDriver.*
 
-## 🏃‍♂️ 🏃‍♂️ Running Tests
+## ✨ Running Tests
 All tests are executed using the robot module.
 
 ### Run All Tests
@@ -113,5 +114,6 @@ After execution, Robot Framework generates detailed HTML reports. Here is a prev
 ### 3. CI/CD Workflow Result
 ![GitHub Actions](assets/screenshots/ci_workflow.png)
 *Automated execution results via GitHub Actions.*
+
 ---
 **Author:** Pengfei Li
