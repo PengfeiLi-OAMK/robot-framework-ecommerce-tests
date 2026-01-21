@@ -10,28 +10,23 @@ Test Teardown    End Web Test
 
 *** Test Cases ***
 Should be able to add item to cart
-    SwagLabsApp.Go to "Login" Page
-    SwagLabsApp.Login With Valid Credentials
-    SwagLabsApp.Verify Login Successful
+    SwagLabsApp.Login As Standard User
     SwagLabsApp.Add "Backpack" To Cart
-    SwagLabsApp.verify Item number in Cart is correct
+    SwagLabsApp.Verify Item Number In Cart is Correct
 
 Should be able to remove item from cart
-    SwagLabsApp.Go to "Login" Page
-    SwagLabsApp.Login With Valid Credentials
-    SwagLabsApp.Verify Login Successful
+    SwagLabsApp.Login As Standard User
     SwagLabsApp.Add "Backpack" To Cart
-    SwagLabsApp.verify Item number in Cart is correct
+    SwagLabsApp.Verify Item Number In Cart is Correct
     SwagLabsApp.Remove "Backpack" From Cart
     SwagLabsApp.Verify no items in Cart
 
 Should be able to checkout successfully
-    SwagLabsApp.Go to "Login" Page
-    SwagLabsApp.Login With Valid Credentials
-    SwagLabsApp.Verify Login Successful
+    SwagLabsApp.Login As Standard User
     SwagLabsApp.Add "Backpack" To Cart
     SwagLabsApp.Verify Item Number In Cart is Correct
     SwagLabsApp.Go to "Cart" Page
-    SwagLabsApp.Go to Checkout
+    SwagLabsApp.Start Checkout
+    SwagLabsApp.Add Checkout Information
     SwagLabsApp.Complete Checkout
 

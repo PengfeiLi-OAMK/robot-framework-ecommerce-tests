@@ -16,6 +16,10 @@ ${CUSTOMER_FIRST_NAME}   John
 ${CUSTOMER_LAST_NAME}    Doe
 ${CUSTOMER_POSTAL_CODE}  12345
 *** Keywords ***
+Login As Standard User
+    Go to "Login" Page
+    Login With Valid Credentials
+    Verify Login Successful
 Go to "Login" Page
     LogIn.Navigate To   ${URL}
     LogIn.Verify page loaded
@@ -40,13 +44,14 @@ Verify Item Number In Cart is Correct
 Remove "Backpack" From Cart
     Products.Remove From Cart        ${PRODUCT_1}
 Verify no items in Cart
-    TopNav.Very Cart is Empty    
+    TopNav.Verify Cart is Empty    
 Go to "Cart" Page
     TopNav.Click "Cart" Link
     Cart.Verify page loaded
-Go to Checkout
+Start Checkout
     Cart.Click "Checkout" button
     CheckOut.Verify Info Page Loaded
+Add Checkout Information
     CheckOut.Fill Customer Information Fields    ${CUSTOMER_FIRST_NAME}   ${CUSTOMER_LAST_NAME}    ${CUSTOMER_POSTAL_CODE}
     CheckOut.Click "Continue" button
     CheckOut.Verify Overview Page Loaded
