@@ -35,8 +35,18 @@ jobs:
                 python -m robot -d Results -v BROWSER:headlesschrome Tests/
             
             - name: Upload Test Results
+              if: always()
               uses: actions/upload-artifact@v4
               with:
                   name: robot-test-report
                   path: Results/
                   retention-days: 5
+            - name: Deploy Report to GitHub Pages
+              if: always() # 即使测试失败也要更新报告
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./Results 
+                  keep_files: false
+                  user_name: 'github-actions[bot]'
+                  user_email: 'github-actions[bot]@users.noreply.github.com' 
